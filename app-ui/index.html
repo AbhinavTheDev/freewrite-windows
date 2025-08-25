@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               img-src 'self' data:;
+               style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
+               script-src 'self';
+               font-src 'self' https://cdnjs.cloudflare.com;
+               connect-src 'self';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freewrite</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body class="dark-theme">
+    <div id="app-container">
+      <!-- Custom title bar for dragging -->
+      <!-- <div id="title-bar" data-tauri-drag-region>
+        <div id="title">Freewrite</div>
+        <div id="title-bar-controls">
+          <button id="min-button" class="title-bar-button" title="Minimize">
+            <i class="fa fa-window-minimize"></i>
+          </button>
+          <button id="max-button" class="title-bar-button" title="Maximize">
+            <i class="fa fa-window-maximize"></i>
+          </button>
+          <button id="close-button" class="title-bar-button" title="Close">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+      </div> -->
+
+      <div id="editor-container">
+        <textarea id="editor" autofocus></textarea>
+      </div>
+
+      <div id="toolbar">
+        <div id="document-controls">
+          <button id="new-doc" class="toolbar-button" title="New Document">
+            <i data-lucide="file"></i>
+          </button>
+          <button id="open-doc" class="toolbar-button" title="Open Document">
+            <i data-lucide="folder-open"></i>
+          </button>
+          <button id="save-doc" class="toolbar-button" title="Save Document">
+            <i data-lucide="save"></i>
+          </button>
+        </div>
+
+        <div id="status">
+          <div id="word-count">Words: 0</div>
+          <div id="char-count">Characters: 0</div>
+          <div id="save-status">Saved</div>
+        </div>
+
+        <div id="format-controls">
+          <div class="select-container">
+            <select id="font-family" class="styled-select">
+              <option value="default">Default Font</option>
+              <option value="'Times New Roman', serif">Times New Roman</option>
+              <option value="Arial, sans-serif">Arial</option>
+              <option value="'Courier New', monospace">Courier New</option>
+              <option value="Georgia, serif">Georgia</option>
+              <option value="'Palatino Linotype', serif">Palatino</option>
+              <option value="Verdana, sans-serif">Verdana</option>
+              <option value="'Comic Sans MS', cursive">Comic Sans</option>
+              <option value="Impact, sans-serif">Impact</option>
+            </select>
+          </div>
+
+          <div class="select-container">
+            <select id="font-size" class="styled-select">
+              <option value="12">12px</option>
+              <option value="14">14px</option>
+              <option value="16">16px</option>
+              <option value="18" selected>18px</option>
+              <option value="20">20px</option>
+              <option value="22">22px</option>
+              <option value="24">24px</option>
+              <option value="28">28px</option>
+              <option value="32">32px</option>
+              <option value="36">36px</option>
+              <option value="42">42px</option>
+              <option value="48">48px</option>
+            </select>
+          </div>
+
+          <button id="theme-toggle" class="toolbar-button" title="Toggle Theme">
+            <i data-lucide="sun" class="sun" id="sun"></i>
+            <i data-lucide="moon" class="moon" id="moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Use the global Tauri API (no bundler/imports needed) -->
+    <script type="module" src="./src/renderer.js"></script>
+  </body>
+</html>

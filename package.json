@@ -1,0 +1,15 @@
+{
+  "name": "freewrite-tauri",
+  "version": "1.0.0",
+  "description": "Freewrite – a minimal distraction-free writing app using Tauri.",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.2"
+  }
+}
